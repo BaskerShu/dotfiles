@@ -1,0 +1,54 @@
+let mapleader = " "
+
+set showmode
+set incsearch hlsearch
+set ignorecase smartcase
+
+set surround
+set multiple-cursors
+set commentary
+set exchange
+set ReplaceWithRegister
+set argtextobj
+
+set rnu
+set nu
+set cb
+
+inoremap jk <Esc>
+vnoremap jk <Esc>
+
+map <C-e> :action RecentFiles<CR>
+map <C-p> :action GotoFile<CR>
+map <C-n> :action GotoClass<CR>
+nnoremap <leader><leader> :action SearchEverywhere<cr>
+map <Leader>s :action SaveAll<CR>
+map <Leader>u :action GotoSuperMethod<CR>
+map <Leader>b :action Git.Branches<CR>
+map <Leader>t :action ActivateTerminalToolWindow<CR>
+map <Leader>h :action HideActiveWindow<CR>
+
+" key bindings for quickly moving between windows
+" h left, l right, k up, j down
+nmap <C-h> <c-w>h
+nmap <C-l> <c-w>l
+nmap <C-k> <c-w>k
+nmap <c-j> <c-w>j
+nnoremap <tab> <c-w>w
+nnoremap <c-w><c-c> <c-w>c
+
+" Refactiorings
+vmap T :action Refactorings.QuickListPopupAction<cr>
+
+nnoremap <leader>cv :action ChangeView<cr>
+nmap <leader>rr :action RenameElement<cr>
+
+" search
+nnoremap / /\v
+vnoremap / /\v
+nnoremap g/ :action Find<cr>
+
+" built-in navigation to navigated items works better
+nnoremap <c-o> :action Back<cr>
+nnoremap <c-i> :action Forward<cr>
+
