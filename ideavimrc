@@ -1,27 +1,33 @@
-let mapleader = " "
+let mapleader = ","
 
 set showmode
+set ideamarks
 set incsearch hlsearch
 set ignorecase smartcase
+set clipboard+=unnamed
 
+set virtualedit=onemore
 set surround
 set multiple-cursors
 set commentary
 set exchange
 set ReplaceWithRegister
 set argtextobj
+set highlightedyank
+set NERDTree
+set easymotion
+
 
 set rnu
 set nu
 set cb
 
-inoremap jk <Esc>
-vnoremap jk <Esc>
+" inoremap jk <Esc>
+" vnoremap jk <Esc>
 
 map <C-e> :action RecentFiles<CR>
 map <C-p> :action GotoFile<CR>
-map <C-n> :action GotoClass<CR>
-nnoremap <leader><leader> :action SearchEverywhere<cr>
+map <C-c> :action GotoClass<CR>
 map <Leader>s :action SaveAll<CR>
 map <Leader>u :action GotoSuperMethod<CR>
 map <Leader>b :action Git.Branches<CR>
@@ -38,17 +44,21 @@ nnoremap <tab> <c-w>w
 nnoremap <c-w><c-c> <c-w>c
 
 " Refactiorings
-vmap T :action Refactorings.QuickListPopupAction<cr>
+nmap T :action Refactorings.QuickListPopupAction<cr>
+nmap <leader>rr :action RenameElement<cr>
 
 nnoremap <leader>cv :action ChangeView<cr>
-nmap <leader>rr :action RenameElement<cr>
 
 " search
 nnoremap / /\v
 vnoremap / /\v
 nnoremap g/ :action Find<cr>
 
+" NERDTree
+nnoremap <C-n> :NERDTree<CR>
+
 " built-in navigation to navigated items works better
 nnoremap <c-o> :action Back<cr>
 nnoremap <c-i> :action Forward<cr>
 
+" vim-easymotion
